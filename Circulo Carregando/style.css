@@ -1,0 +1,24 @@
+body{
+    background-color: rgba(0, 0, 0, 0.941);
+
+}
+.loader{
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #fff;
+    animation: pulsa .85s linear infinite;
+}
+@keyframes pulsa {
+    0%{
+        transform: scale(.15);
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 0; 
+    }
+}

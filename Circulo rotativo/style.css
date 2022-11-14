@@ -1,0 +1,29 @@
+body{
+    background-color: rgba(0, 0, 0, 0.941);
+    margin: 10%;
+}
+.loader{
+    position: absolute;
+    width: 104px;
+    height: 104px;
+    border-radius: 500px;
+    border: 3px solid #f9f9f9;
+}
+.loader::after{
+    content: '';
+    display: block;
+    position: absolute;
+    left: 50px;
+    bottom: 50px;
+    width: 3px;
+    border-radius: 1px;
+    height: 44px;
+    background: #f9f9f9;
+    transform-origin: 0 100%;
+    animation: tick 1s infinite;
+}
+@keyframes tick {
+    to{
+        transform: rotate(359deg);
+    }
+}

@@ -1,0 +1,196 @@
+#tudo{
+    border: 1px solid black;
+    height: 550px;
+    width: 1100px;
+    position: fixed;
+    margin-left: 100px;
+    margin-top: 20px;
+    background: url(imagens/papelFundo.jpg);
+    background-size: 1101px 550px;
+    background-repeat: repeat;
+    border-radius: 5px;
+}
+#barraHorizontal{
+    background-color: rgba(0, 0, 255, 0.5);
+    border: 1px solid whitesmoke;
+    padding: 16px;
+    position: absolute;
+    top: 516px;
+    width:1066px;
+    border-radius: 5px;
+
+}
+#menuIniciar{
+    background-color: rgba(0, 0, 255, 0.5);
+    border: 1px solid whitesmoke;
+    height: 400px;
+    width: 400px;
+    position: absolute;
+    top: 115px;
+    border-radius: 5px;
+    left: 3px;
+    display: none;
+}
+#menuTarefas{
+    background-color: rgba(0, 0, 255, 0.5);
+    border: 1px solid whitesmoke;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 415px;
+    border-radius: 5px;
+    left: 855px;
+}
+.iconBarraHorizontal>ul>li{
+    display: inline-block;
+}
+.iconBarraHorizontal>ul{
+    position: absolute;
+    top: -20px;
+    left: -30px;
+}
+.iconMenuIniciar>ul{
+    list-style: none;
+    border-radius: 4px;
+    width: 200px;
+}
+.iconMenuIniciar>ul:hover{
+    background-color: rgba(0, 0, 255, 0.185);
+    cursor: pointer;
+}
+.iconMenuIniciar{
+    list-style: none;
+    background-color: white;
+    border-radius: 4px;
+    width: 240px;
+    height: 390px;
+    margin-top: 6px;
+    margin-left: 3px;
+    border: 2px solid rgb(0, 0, 255);
+}
+.iconMenuIniciar{
+    position: absolute;
+}
+.m,.p{
+    margin-left: -33px;
+}
+.m{
+    display: inline-block;
+}
+.p{
+    position: absolute;
+    left: 100px;
+}
+.pesquisar{
+    background-color: rgb(247, 244, 244);
+    padding: 10px;
+    border-radius: 5px;
+    position: absolute;
+    top: 345px;
+    width: 220px;
+    left: -0px;
+    border-top: 3px solid rgb(231, 231, 231);
+}
+.iconMenuIniciarMais>button{
+    width: 240px;
+    height: 30px;
+    border: none;
+    background-color: white;
+    border-top: 2px solid rgba(158, 158, 243, 0.685);
+    cursor: pointer;
+}
+.iconMenuIniciarMais>button:hover{
+    background-color: rgba(0, 0, 255, 0.185);
+}
+.usuarioMenuIniciar{
+    background-color: blue;
+    position: absolute;
+    left: 290px;
+    top: -30px;
+    height: 74px;
+    width: 74px;
+    border: 1px solid white;
+    border-radius: 8px;
+}
+.usuarioMenuIniciar1{
+    background: url(imagens/sublime.png);
+    background-repeat: no-repeat;
+    background-size: 50px 50px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    height: 68px;
+    width: 68px;
+    border: 1px solid white;
+    border-radius: 8px;
+    
+}
+.menuIniciarLado{
+    position: absolute;
+    left: 220px;
+    top: 60px;
+    width: 300px;
+    color: white;
+}
+.menuIniciarLado>ul{
+    list-style: none;
+}
+.menuIniciarLado>ul>li{
+    font-weight: 400;
+    font-size: 11pt;
+    font-family: "sans-serif";
+}
+.MenuIniciarDesligar{
+    position: absolute;
+    left: 265px;
+    top: 330px;
+}
+select{
+    background-color: rgba(9, 9, 255, 0.596);
+    width: 90px;
+    height: 28px;
+    border-radius: 5px;
+    border: 2px solid rgb(149, 149, 180);
+    color: white;
+}
+.feixaArea{
+    background-color: rgba(56, 56, 168, 0.596);
+    height: 31px;
+    width: 13px;
+    border: 1px solid whitesmoke;
+    position: absolute;
+    top: 3px;
+    border-radius: 1px;
+    left: 1114px;
+}
+#iconMenuRelo{
+    color: white;
+    top: 10px;
+    position: absolute;
+    left: 1050px;
+}
+#iconMenuRelo:hover{
+    border-left: 2px rgba(2, 2, 87, 0.849) solid;
+    border-right: 2px rgba(2, 2, 87, 0.849) solid;
+    /*padding-left: 5px;
+    padding-right: 5px;*/
+    cursor: pointer;
+}
+#iconMusic{
+    color: white;
+    top: 7px;
+    position: absolute;
+    left: 1000px;
+}
+#iconMusic>img{
+    width: 24px;
+}
+#iconNet{
+    color: white;
+    top: 7px;
+    position: absolute;
+    left: 960px;
+}
+#iconNet>img{
+    width: 27px;
+}
