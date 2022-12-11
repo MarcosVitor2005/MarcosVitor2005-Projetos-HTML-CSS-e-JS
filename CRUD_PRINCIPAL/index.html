@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <!--Para icon-->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script src="script/script.js" defer></script>
+    <!-- <script src="script/scritpt1.js" defer></script> -->
+    <title>CRUD-START/UP</title>
+</head>
+<body>
+    <div class="tudo">
+        <div class="text shadow-lg rounded">
+            <div>
+                <ion-icon name="apps-outline" data-bs-toggle="modal" data-bs-target="#staticBackdrop"></ion-icon>
+            </div>
+            <div class="usuarioFT">
+                <img src="img/User-Avatar-Profile-Clip-Art-Transparent-PNG.png" alt="">
+            </div>
+
+            <form action="">
+                <div class="m-2">
+                    <input type="hidden" id="index_edit" value="" placeholder="Editar">
+                </div>
+                <div class="m-2">
+                    <input type="text" name="" id="usuario" class="btnn" placeholder="Usuario">
+                </div>
+                <div class="m-2">
+                    <input type="email" name="" id="email" class="btnn" placeholder="Email">
+                </div>
+                <div class="m-2">
+                    <img src="https://cdn0.iconfinder.com/data/icons/ui-icons-pack/100/ui-icon-pack-14-512.png"
+                        id="olho" class="olho">
+                    <input type="password" name="" id="senha" class="btnn" placeholder="Senha">
+                </div>
+                <div class="m-2">
+                    <img src="https://cdn0.iconfinder.com/data/icons/ui-icons-pack/100/ui-icon-pack-14-512.png"
+                        id="olho1" class="olho1">
+                    <input type="password" name="" id="senhaNova" class="btnn" placeholder="Senha Novamente">
+                </div>
+                <div class="m-2">
+                    <input type="number" name="" id="idade" class="btnn" placeholder="Idade">
+                </div>
+                <div class="d-grid gap-2 m-2">
+                    <button type="button" class="btn btn-light" onclick="salvar()">Enviar</button>
+                </div>
+                <p style="display:none; color:red" id="mensagem">há campo sem dados!</p>
+                <p style="display:none; color:red" id="msg">Senhas não estão iguais</p>
+            </form>
+        </div>
+    </div>
+    <div class="lista">
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content  text-bg-light p-3" style="--bs-bg-opacity: 10;">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Lista de usuarios cadastrados</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <!--Lista onde fica todas as pessoas cadastradas-->
+                    <div class="modal-body">
+                        <div id="modal" class="hide">
+                            <div class="modal-header">
+                                <div class="listaDeUsuarios">
+                                    <table class="table table-dark table-striped">
+                                        <thead>
+                                            <tr>
+                                                <td class="email">Email</td>
+                                                <td class="usuario">Usuario</td>
+                                                <td class="senha">Senha</td>
+                                                <td class="data">Senha De novo</td>
+                                                <td class="idade">Idade</td>
+                                                <td class="usuario">Acões</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="table_body">
+                                        </tbody>
+                                    </table>
+                                </div><br>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Fim da lista de pessoas-->
+
+                    <!--botão para fechar o modal-->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">FECHAR</button>
+                        <!--offcanvas de ajuda-->
+                        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">Ajuda</button>
+                        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+                            aria-labelledby="offcanvasExampleLabel">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title" id="offcanvasExampleLabel">Ajuda</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <div>
+                                    <h3>Ajuda para Editar</h3>
+                                    <p>Para Editar basta clicar no botão "EDITAR" e ele ira voltar para o local onde preencheu seus dados</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--fim do offcanva de ajuda-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <script src="script.js" defer></script> -->
+
+</body>
+
+</html>

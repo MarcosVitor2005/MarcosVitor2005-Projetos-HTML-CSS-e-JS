@@ -1,0 +1,89 @@
+body {
+    /*pelo motivo dessa pagina ser feito apenas para o zoom 100%, então coloquei essa função que irá deixar por padrão
+    o zoom em 100%, "RECOMENDO NÃO ALTERAR!"*/
+    zoom: 1;
+}
+
+.text {
+    border: 1px solid white;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.405);
+    padding: 30px;
+    margin-top: 10%;
+    margin-left: 40%;
+    margin-right: 40%;
+}
+
+/*vou definir um backgraund para o fundo*/
+.tudo {
+    background-image: radial-gradient(circle at 50% -20.71%, #fff54b 0, #f3f74e 7.14%, #dcf553 14.29%, #c3f259 21.43%, #a9ec5f 28.57%, #8de466 35.71%, #70d96b 42.86%, #50cc6f 50%, #29bf72 57.14%, #00b376 64.29%, #00a97a 71.43%, #00a07e 78.57%, #009983 85.71%, #009488 92.86%, #00908f 100%);
+    background-size: 300%;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.usuarioFT {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin-left: 27%;
+}
+
+.usuarioFT>img {
+    height: 100px;
+    width: 100px;
+}
+
+.btnn {
+    border: none;
+    background-color: #00909000;
+    border-bottom: 1px solid white;
+    cursor: pointer;
+}
+
+::placeholder {
+    color: white;
+}
+
+.btnn:hover {
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.405);
+}
+
+ion-icon {
+    font-size: 20pt;
+    color: white;
+    float: right;
+    cursor: pointer;
+}
+
+td {
+    text-align: center;
+    width: 300px;
+}
+
+.olho {
+    cursor: pointer;
+    left: 57%;
+    position: absolute;
+    width: 20px;
+}
+
+.olho1 {
+    cursor: pointer;
+    left: 57%;
+    position: absolute;
+    width: 20px;
+}
+
+.sim {
+    width: 100px;
+    height: 50px;
+    font-size: 10pt;
+}
+
+.n1 {
+    color: white;
+}
