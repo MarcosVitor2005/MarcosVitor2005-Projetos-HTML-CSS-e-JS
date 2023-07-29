@@ -1,0 +1,45 @@
+@font-face {
+    font-family: DS-DIGIT;
+    src: url(DS-DIGIT.TTF);
+}
+.nome{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+body{
+    background-color: black;
+}
+#relogio{
+    color: white;
+    font-family: 'DS-DIGIT';
+}
+#relogio1{
+    padding-top: 10vh;
+    text-align: center;
+}
+.cl1{
+    display: inline-block;
+    color: rgb(141, 135, 135);
+}
+#clock{
+    display: inline-flex;
+    font-size: 60pt;
+}
+.fundoL{
+    display: inline-flex;
+    font-size: 60pt;
+    position: fixed;
+    color: rgba(240, 248, 255, 0.226);
+    
+}
+#diaT>div{
+    display: inline-flex;
+}
+#segundos{
+    font-size: 30pt;
+    padding-top: 30px;
+}
+.segundos1{
+    font-size: 30pt;
+    padding-top: 30px;
+}
