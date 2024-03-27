@@ -18,3 +18,5 @@ Projetos desenvolvidos por Marcos Vitor.
    - [Versão 1.0](https://marcosvitor2005.github.io/Projetos-HTML-CSS-e-JS/WINDOWS%207%20ONLINE/Windows%207%20(1.0)/index.html)
    - [Versão 1.2](https://marcosvitor2005.github.io/Projetos-HTML-CSS-e-JS/WINDOWS%207%20ONLINE/Windows%207%20(1.2)/index.html)
    - [Versão 1.3](https://marcosvitor2005.github.io/Projetos-HTML-CSS-e-JS/WINDOWS%207%20ONLINE/Windows%207%20(1.3)/index.html)
+     
+7. [Calculadora](https://marcosvitor2005.github.io/Projetos-HTML-CSS-e-JS/calculadora/index.html)
