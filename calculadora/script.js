@@ -1,0 +1,157 @@
+var display = document.getElementById("display");
+
+var listenerBtn = [];
+
+// Botões de operador
+listenerBtn.push(document.getElementById("sum"));
+listenerBtn.push(document.getElementById("subtraction"));
+listenerBtn.push(document.getElementById("division"));
+listenerBtn.push(document.getElementById("multiplication"));
+listenerBtn.push(document.getElementById("power")); // Adicionando botão de potência
+
+// Botões de número
+for (var i = 0; i <= 9; i++) {
+    listenerBtn.push(document.getElementById("num" + i));
+}
+
+// Botões adicionais
+var btnResult = document.getElementById("result");
+var btnCleanDisplay = document.getElementById("cleanDisplay");
+var btnDeleteDigit = document.getElementById("deleteDigit");
+listenerBtn.push(document.getElementById("point"));
+
+var pointCounter = 0;
+var pointLimit = 1;
+
+for (var i = 0; i < listenerBtn.length; i++) {
+    listenerBtn[i].addEventListener("click", writeOnDisplay);
+}
+
+btnResult.onclick = function () {
+    calculateResult();
+};
+
+btnDeleteDigit.onclick = function () {
+    deleteLastDigit();
+};
+
+btnCleanDisplay.onclick = function () {
+    display.value = "";
+    pointCounter = 0;
+};
+
+function calculateResult() {
+    if (verifyOperator(display.value.substring(display.value.length - 1, display.value.length))) {
+        deleteLastDigit(); // Se o último dígito no visor for um operador, ele é ignorado
+    }
+
+    var calculatedValue = calculateArray(display.value);
+
+    if (calculatedValue || calculatedValue == "0") {
+        display.value = calculatedValue;
+    }
+}
+
+function deleteLastDigit() {
+    if (display.value.length > 0) {
+        if (display.value[display.value.length - 1] === ".") { // Se o caractere excluído for um ponto decimal, ele pode ser substituído por um novo
+            pointCounter = 0;
+        }
+        display.value = display.value.substring(0, display.value.length - 1);
+    }
+}
+
+function writeOnDisplay() {
+    lastDigit = this.value;
+
+    if (verifyOperator(lastDigit)) {
+        pointCounter = 0;
+        if (verifyOperator(display.value.substring(display.value.length - 1, display.value.length))) { // Substitui o operador anterior pelo novo operador inserido
+            deleteLastDigit();
+        }
+    }
+
+    if (verifyDecimalPoint(lastDigit) === true) {
+        pointCounter++;
+        if (pointCounter > pointLimit) {
+            return;
+        }
+    }
+    display.value += lastDigit;
+}
+
+function verifyDecimalPoint(valorDigitado) {
+    if (valorDigitado === ".") {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function verifyOperator(operatorValue) {
+    switch (operatorValue) {
+        case "*":
+            return true;
+        case "/":
+            return true;
+        case "+":
+            return true;
+        case "-":
+            return true;
+        case "^": // Adicionando a verificação para o operador de potência
+            return true;
+        default:
+            return false;
+    }
+}
+
+function calculateArray(exp) {
+    exp = exp.toString().split("+");
+    for (a = 0; a < exp.length; a++) {
+        exp[a] = exp[a].split("-");
+        for (b = 0; b < exp[a].length; b++) {
+            exp[a][b] = exp[a][b].split("*");
+            for (c = 0; c < exp[a][b].length; c++) {
+                exp[a][b][c] = exp[a][b][c].split("/");
+                exp[a][b][c] = divideArray(exp[a][b][c]);
+            }
+            exp[a][b] = multiplyArray(exp[a][b]);
+        }
+        exp[a] = subtractArray(exp[a]);
+    }
+    exp = sumArray(exp);
+
+    return exp;
+}
+
+function multiplyArray(parameter) {
+    var resultMult = 1;
+    for (var x = 0; x < parameter.length; x++) {
+        resultMult *= parameter[x];
+    }
+    return resultMult;
+}
+
+function divideArray(parameter) {
+    var resultDiv = parameter[0];
+    for (var x = 1; x < parameter.length; x++) {
+        resultDiv /= parameter[x];
+    }
+    return resultDiv;
+}
+
+function subtractArray(parameter) {
+    var resultSub = parameter[0];
+    for (var x = 1; x < parameter.length; x++) {
+        resultSub -= parameter[x];
+    }
+    return resultSub;
+}
+
+function sumArray(parameter) {
+    var resultSum = 0;
+    for (var x = 0; x < parameter.length; x++) {
+        resultSum += parameter[x];
+    }
+    return resultSum;
+}
